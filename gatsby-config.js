@@ -4,7 +4,7 @@ module.exports = {
     description: 'A Gatsby theme for the carbon design system',
     keywords: 'gatsby,theme,carbon',
   },
-  pathPrefix: "/Rohit-Sharma16/gastby-git",
+  pathPrefix: "/Krishnaa-ibm/krishna-gatsby",
   plugins: [
     {
       resolve: 'gatsby-plugin-manifest',
