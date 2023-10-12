@@ -6,16 +6,27 @@
 trigger:
 - main
 
-pool: MyselfHostedAgents
+pr: none
+
+pool:
+  name: Fyre machine1-self hosted 
 
 steps:
-- task: NodeTool@0
-  inputs:
-    versionSpec: '16.x'
-  displayName: 'Install Node.js'
+  - task: NodeTool@0
+    inputs:
+      versionSpec: '16.x'
+    displayName: 'Install Node.js'
 
-- script: |
-    npm install
-    npm install gh-pages --save-dev
-    npm run deploy
-  displayName: 'npm install and build'
+  - script: |
+      npm install
+      npm run build
+    displayName: 'npm install and build'
+
+  - script: |
+      npm install gh-pages --save-dev
+      npm run deploy
+    displayName: 'Deploy to GitHub Pages'
+
+  - publish: $(System.DefaultWorkingDirectory)/build
+    artifact: drop
+    displayName: 'Publish Artifacts'
