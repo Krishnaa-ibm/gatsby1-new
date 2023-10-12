@@ -9,7 +9,7 @@ trigger:
 pr: none
 
 pool:
-  name: Fyre machine1-self hosted 
+  name: MyselfHostedAgents 
 
 steps:
   - task: NodeTool@0
