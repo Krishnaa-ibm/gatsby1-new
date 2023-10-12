@@ -26,7 +26,3 @@ steps:
       npm install gh-pages --save-dev
       npm run deploy
     displayName: 'Deploy to GitHub Pages'
-
-  - publish: $(System.DefaultWorkingDirectory)/build
-    artifact: drop
-    displayName: 'Publish Artifacts'
